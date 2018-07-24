@@ -1,9 +1,10 @@
-package vasyl.v.stoliarchuk.testtaskmiddle
+package vasyl.v.stoliarchuk.testtaskmiddle.features.reposearch
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import vasyl.v.stoliarchuk.testtaskmiddle.R
 
-class MainActivity : AppCompatActivity() {
+class RepoSearchActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
