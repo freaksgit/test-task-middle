@@ -6,8 +6,6 @@ import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 import vasyl.v.stoliarchuk.testtaskmiddle.App
 import vasyl.v.stoliarchuk.testtaskmiddle.di.module.AppModule
-import vasyl.v.stoliarchuk.testtaskmiddle.features.reposearch.RepoSearchComponent
-import vasyl.v.stoliarchuk.testtaskmiddle.features.reposearch.RepoSearchModule
 import javax.inject.Singleton
 
 @Singleton
@@ -26,6 +24,4 @@ interface AppComponent : AndroidInjector<App> {
     }
 
     override fun inject(app: App)
-
-    fun plus(repoSearchModule: RepoSearchModule): RepoSearchComponent
 }
