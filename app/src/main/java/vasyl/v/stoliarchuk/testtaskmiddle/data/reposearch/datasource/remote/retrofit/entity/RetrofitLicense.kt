@@ -4,8 +4,8 @@ import com.google.gson.annotations.SerializedName
 
 
 data class RetrofitLicense(
-        @SerializedName("key") val key: String? = null,
-        @SerializedName("name") val name: String? = null,
-        @SerializedName("spdx_id") val spdxId: String? = null,
-        @SerializedName("url") val url: String? = null,
-        @SerializedName("node_id") val nodeId: String? = null)
+         val key: String,
+         val name: String? = null,
+         val spdxId: String? = null,
+         val url: String? = null,
+         val nodeId: String? = null)
