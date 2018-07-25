@@ -15,6 +15,7 @@ ext{
     okHttpLogginVersion = '3.4.1'
     roomVersion = '1.1.1'
     daggerVersion = '2.12'
+    mockitoVersion = '2.20.0'
 }
 
 
