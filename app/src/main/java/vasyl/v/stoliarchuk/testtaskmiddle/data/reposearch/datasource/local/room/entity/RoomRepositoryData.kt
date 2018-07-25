@@ -6,10 +6,7 @@ import android.arch.persistence.room.*
         foreignKeys = [
             ForeignKey(entity = RoomOwner::class,
                     parentColumns = [RoomOwner.COLUMN_ID],
-                    childColumns = [RoomRepositoryData.COLUMN_OWNER_ID]),
-            ForeignKey(entity = RoomLicense::class,
-                    parentColumns = [RoomLicense.COLUMN_KEY],
-                    childColumns = [RoomRepositoryData.COLUMN_LICENSE_KEY])],
+                    childColumns = [RoomRepositoryData.COLUMN_OWNER_ID])],
         indices = [(Index(name = "IXFK_" + RoomRepositoryData.TABLE_NAME + "_" + RoomRepositoryData.COLUMN_OWNER_ID, value = [(RoomRepositoryData.COLUMN_OWNER_ID)])),
             (Index(name = "IXFK_" + RoomRepositoryData.TABLE_NAME + "_" + RoomRepositoryData.COLUMN_LICENSE_KEY, value = [(RoomRepositoryData.COLUMN_LICENSE_KEY)]))])
 data class RoomRepositoryData(

@@ -1,5 +1,6 @@
 package vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.datasource.local.room
 
+import android.arch.persistence.db.SimpleSQLiteQuery
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
@@ -39,6 +40,21 @@ abstract class GithubDatabase : RoomDatabase() {
 
         fun destroyInstance() {
             INSTANCE = null
+        }
+    }
+
+    fun clearAndResetAllTables(): Boolean {
+        val query = SimpleSQLiteQuery("DELETE FROM sqlite_sequence")
+        beginTransaction()
+        return try {
+            clearAllTables()
+            query(query)
+            setTransactionSuccessful()
+            true
+        } catch (e: Exception) {
+            false
+        } finally {
+            endTransaction()
         }
     }
 }
