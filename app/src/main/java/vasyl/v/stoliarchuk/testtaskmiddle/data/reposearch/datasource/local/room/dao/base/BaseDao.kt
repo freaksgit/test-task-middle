@@ -1,6 +1,9 @@
 package vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.datasource.local.room.dao.base
 
-import android.arch.persistence.room.*
+import android.arch.persistence.room.Delete
+import android.arch.persistence.room.Insert
+import android.arch.persistence.room.OnConflictStrategy
+import android.arch.persistence.room.Update
 
 
 interface BaseDao<T> {
@@ -10,7 +13,7 @@ interface BaseDao<T> {
      *
      * @param obj the object to be inserted.
      */
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insert(obj: T)
 
     /**
@@ -18,7 +21,7 @@ interface BaseDao<T> {
      *
      * @param obj the objects to be inserted.
      */
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insert(vararg obj: T)
 
     /**

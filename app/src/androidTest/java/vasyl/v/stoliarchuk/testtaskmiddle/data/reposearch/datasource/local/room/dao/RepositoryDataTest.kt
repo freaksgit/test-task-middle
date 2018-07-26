@@ -23,7 +23,7 @@ class RepositoryDataTest : BaseRoomTest() {
         githubDatabase.repositoryDataDao().insert(roomRepositoryData)
     }
 
-    @Test(expected = SQLiteConstraintException::class)
+    @Test()
     fun insertRepositoryDataTwiceWithOwner() {
         val roomRepositoryData = RoomEntityFactory.makeRoomRepositoryDataEntity(1)
         val roomOwner = RoomEntityFactory.makeRoomOwnerEntity(1)

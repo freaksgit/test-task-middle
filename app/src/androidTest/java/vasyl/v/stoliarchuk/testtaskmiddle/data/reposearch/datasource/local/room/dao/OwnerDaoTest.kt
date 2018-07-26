@@ -13,7 +13,7 @@ open class OwnerDaoTest : BaseRoomTest() {
     }
 
 
-    @Test(expected = SQLiteConstraintException::class)
+    @Test()
     fun insertOwnerTwice() {
         val roomOwner = RoomEntityFactory.makeRoomOwnerEntity(1)
         githubDatabase.onwerDao().insert(roomOwner)

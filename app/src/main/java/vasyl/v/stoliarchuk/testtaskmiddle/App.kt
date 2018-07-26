@@ -7,13 +7,12 @@ import vasyl.v.stoliarchuk.testtaskmiddle.di.component.DaggerAppComponent
 class App : DaggerApplication() {
 
 
-
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
-            val appComponent = DaggerAppComponent.builder()
-                    .application(this)
-                    .build()
-            appComponent.inject(this)
-            return appComponent
+        val appComponent = DaggerAppComponent.builder()
+                .application(this)
+                .build()
+        appComponent.inject(this)
+        return appComponent
     }
 
 

@@ -10,7 +10,7 @@ class RepositoryDataFromRoomMapper : Function<RoomRepositoryData, RepositoryData
             rRepositoryData.nodeId,
             rRepositoryData.name,
             rRepositoryData.fullName,
-           null,
+            null,
             rRepositoryData._private,
             rRepositoryData.htmlUrl,
             rRepositoryData.description,

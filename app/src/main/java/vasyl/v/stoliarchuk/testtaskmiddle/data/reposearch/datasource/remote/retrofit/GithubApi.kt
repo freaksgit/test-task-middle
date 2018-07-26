@@ -8,7 +8,7 @@ import vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.datasource.remote.retr
 interface GithubApi {
 
     @GET(GET_REPOS_BY_TEXT)
-    fun getRepositoriesByText(@Query("q") queryText: String):Maybe<RetrofitRepositoryDataPack>
+    fun getRepositoriesByText(@Query("q") queryText: String): Maybe<RetrofitRepositoryDataPack>
 
 
     companion object {

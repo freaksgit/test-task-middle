@@ -14,8 +14,8 @@ class RepositoryDataEmbeddedFromRoomMapper(private val repositoryDataFromRoomMap
                                            private val ownerFromRoomMapper: Function<RoomOwner, Owner>) : Function<RoomRepositoryDataEmbedded, RepositoryData> {
     override fun apply(t: RoomRepositoryDataEmbedded): RepositoryData {
         val repositoryData: RepositoryData = repositoryDataFromRoomMapper.apply(t.roomRepositoryData)
-        repositoryData.license = licenseFromRoomMapper.apply(t.roomLicenses[0])
-        repositoryData.owner = ownerFromRoomMapper.apply(t.roomOwners[0])
+        repositoryData.license = if (!t.roomLicenses.isEmpty()) licenseFromRoomMapper.apply(t.roomLicenses[0]) else null
+        repositoryData.owner = if (!t.roomOwners.isEmpty()) ownerFromRoomMapper.apply(t.roomOwners[0]) else null
         return repositoryData
     }
 }

@@ -5,10 +5,10 @@ import vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.datasource.local.room.
 import vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.entity.License
 
 class LicenseFromRoomMapper : Function<RoomLicense, License> {
-    override fun apply(rLicense: RoomLicense):License = License(
-                rLicense.key,
-                rLicense.name,
-                rLicense.spdxId,
-                rLicense.url,
-                rLicense.nodeId)
+    override fun apply(rLicense: RoomLicense): License = License(
+            rLicense.key,
+            rLicense.name,
+            rLicense.spdxId,
+            rLicense.url,
+            rLicense.nodeId)
 }

@@ -5,8 +5,6 @@ import android.arch.persistence.room.Query
 import android.arch.persistence.room.Transaction
 import io.reactivex.Maybe
 import vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.datasource.local.room.dao.base.BaseDao
-import vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.datasource.local.room.entity.RoomLicense
-import vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.datasource.local.room.entity.RoomOwner
 import vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.datasource.local.room.entity.RoomRepositoryData
 import vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.datasource.local.room.entity.RoomRepositoryDataEmbedded
 

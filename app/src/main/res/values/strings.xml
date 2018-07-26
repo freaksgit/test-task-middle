@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">TestTaskMiddle</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="activity_repo_search_query_button">Search</string>
+    <string name="activity_repo_search_cancel_button">Cancel</string>
+    <string name="no_license">No licence</string>
+    <string name="activity_repo_search_query_edit_text_hint">Search text</string>
+    <string name="activity_repo_search_input_layout_empty_error">Enter one character at least</string>
 </resources>

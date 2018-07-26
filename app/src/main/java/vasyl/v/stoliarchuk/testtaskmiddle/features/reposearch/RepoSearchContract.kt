@@ -4,11 +4,21 @@ import vasyl.v.stoliarchuk.testtaskmiddle.common.presentation.BasePresenter
 
 interface RepoSearchContract {
 
-    interface View{
+    interface View {
+        fun getSearchQueryText(): String
+        fun toggleEmptyQueryErrorMessageVisibility(visible: Boolean)
+        fun startSearch(queryText: String)
+        fun toggleProgressVisibility(visible: Boolean)
+        fun setQueryButtonText(stringResId: Int)
 
     }
 
-    interface Presenter:BasePresenter{
+    interface Presenter : BasePresenter {
+        fun onSearchButtonClicked()
+        fun onSearchStarted()
+        fun onSearchCompleted()
+        fun onSearchCanceled()
+        fun onSearchError(t: Throwable)
 
     }
 }

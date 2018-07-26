@@ -7,7 +7,6 @@ import dagger.android.support.AndroidSupportInjectionModule
 import vasyl.v.stoliarchuk.testtaskmiddle.App
 import vasyl.v.stoliarchuk.testtaskmiddle.di.AppScope
 import vasyl.v.stoliarchuk.testtaskmiddle.di.module.*
-import javax.inject.Singleton
 
 @AppScope
 @Component(modules = [

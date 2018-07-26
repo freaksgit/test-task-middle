@@ -5,5 +5,5 @@ import vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.datasource.local.room.
 import vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.datasource.local.room.entity.RoomOwner
 
 @Dao
-abstract class OwnerDao: BaseDao<RoomOwner>{
+abstract class OwnerDao : BaseDao<RoomOwner> {
 }

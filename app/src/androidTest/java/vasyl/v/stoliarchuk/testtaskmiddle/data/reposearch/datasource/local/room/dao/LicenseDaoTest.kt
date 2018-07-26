@@ -12,7 +12,7 @@ open class LicenseDaoTest : BaseRoomTest() {
     }
 
 
-    @Test(expected = SQLiteConstraintException::class)
+    @Test()
     fun insertLicenseTwice() {
         val roomLicense = RoomEntityFactory.makeRoomLicenseEntity("1")
         githubDatabase.licenseDao().insert(roomLicense)

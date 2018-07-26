@@ -1,18 +1,41 @@
 package vasyl.v.stoliarchuk.testtaskmiddle.features.reposearch
 
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
-import vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.datasource.RepositoryDataSource
+import vasyl.v.stoliarchuk.testtaskmiddle.R
 
-class RepoSearchPresenter(private val mvpView: RepoSearchContract.View,
-                          private val repoDataRepository: RepositoryDataSource) : RepoSearchContract.Presenter {
 
+class RepoSearchPresenter(private val mvpView: RepoSearchContract.View) : RepoSearchContract.Presenter {
+
+    override fun onSearchButtonClicked() {
+        val queryText: String = mvpView.getSearchQueryText()
+        if (queryText.isEmpty()) {
+            mvpView.toggleEmptyQueryErrorMessageVisibility(true)
+        } else {
+            mvpView.toggleEmptyQueryErrorMessageVisibility(false)
+            mvpView.startSearch(queryText)
+        }
+    }
+    override fun onSearchStarted() {
+        mvpView.toggleProgressVisibility(true)
+        mvpView.setQueryButtonText(R.string.activity_repo_search_cancel_button)
+    }
+
+    override fun onSearchCompleted() {
+        mvpView.toggleProgressVisibility(false)
+        mvpView.setQueryButtonText(R.string.activity_repo_search_query_button)
+    }
+
+    override fun onSearchCanceled() {
+        mvpView.toggleProgressVisibility(false)
+        mvpView.setQueryButtonText(R.string.activity_repo_search_query_button)
+    }
+
+    override fun onSearchError(t: Throwable) {
+        mvpView.toggleProgressVisibility(false)
+        mvpView.setQueryButtonText(R.string.activity_repo_search_query_button)
+    }
 
     override fun subscribe() {
-        repoDataRepository.getRepositoriesByText("text")
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe()
+
     }
 
     override fun unsubscribe() {
