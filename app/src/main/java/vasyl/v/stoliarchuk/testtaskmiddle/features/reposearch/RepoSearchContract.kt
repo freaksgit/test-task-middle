@@ -10,6 +10,7 @@ interface RepoSearchContract {
         fun startSearch(queryText: String)
         fun toggleProgressVisibility(visible: Boolean)
         fun setQueryButtonText(stringResId: Int)
+        fun showErrorMessage()
 
     }
 

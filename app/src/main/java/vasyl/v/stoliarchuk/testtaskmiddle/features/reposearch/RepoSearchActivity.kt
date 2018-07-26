@@ -1,6 +1,7 @@
 package vasyl.v.stoliarchuk.testtaskmiddle.features.reposearch
 
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.view.View
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.activity_repo_search.*
@@ -10,6 +11,7 @@ import vasyl.v.stoliarchuk.testtaskmiddle.features.reposearch.fragment.RepoSearc
 import javax.inject.Inject
 
 class RepoSearchActivity : DaggerAppCompatActivity(), RepoSearchContract.View, RepoSearchFragment.OnSearchResultListener {
+
 
     @Inject
     lateinit var presenter: RepoSearchContract.Presenter
@@ -68,6 +70,11 @@ class RepoSearchActivity : DaggerAppCompatActivity(), RepoSearchContract.View, R
 
     override fun setQueryButtonText(stringResId: Int) {
         activity_repo_search_query_button.text = getString(stringResId)
+    }
+
+    override fun showErrorMessage() {
+        Snackbar.make(activity_repo_search_root, getString(R.string.activity_repo_search_error_message), Snackbar.LENGTH_LONG)
+                .show()
     }
 
     override fun toggleProgressVisibility(visible: Boolean) {

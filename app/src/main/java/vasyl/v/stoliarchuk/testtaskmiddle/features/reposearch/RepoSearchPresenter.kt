@@ -32,6 +32,7 @@ class RepoSearchPresenter(private val mvpView: RepoSearchContract.View) : RepoSe
     override fun onSearchError(t: Throwable) {
         mvpView.toggleProgressVisibility(false)
         mvpView.setQueryButtonText(R.string.activity_repo_search_query_button)
+        mvpView.showErrorMessage()
     }
 
     override fun subscribe() {

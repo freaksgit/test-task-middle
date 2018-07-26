@@ -73,6 +73,10 @@ class RepoSearchFragment : DaggerFragment(), RepoSearchFrContract.View {
         }
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.unsubscribe()
+    }
 
     override fun onDetach() {
         super.onDetach()
