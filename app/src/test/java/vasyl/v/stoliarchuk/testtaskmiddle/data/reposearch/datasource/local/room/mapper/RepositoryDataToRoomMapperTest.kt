@@ -1,5 +1,7 @@
 package vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.datasource.local.room.mapper
 
+import EntityFactory
+import RoomEntityFactory
 import org.hamcrest.CoreMatchers
 import org.hamcrest.MatcherAssert
 import org.junit.Before

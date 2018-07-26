@@ -49,7 +49,7 @@ class RepoSearchFragment : DaggerFragment(), RepoSearchFrContract.View {
         searchResultListener?.onSearchCompleted()
     }
 
-    override fun onSearchCanseled() {
+    override fun onSearchCanceled() {
         searchResultListener?.onSearchCanceled()
     }
 

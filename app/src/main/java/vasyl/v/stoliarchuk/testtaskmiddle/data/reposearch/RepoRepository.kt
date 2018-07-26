@@ -3,6 +3,7 @@ package vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch
 import io.reactivex.Completable
 import io.reactivex.Maybe
 import vasyl.v.stoliarchuk.testtaskmiddle.common.data.prefs.PreferenceDataSource
+import vasyl.v.stoliarchuk.testtaskmiddle.common.schedulers.SchedulerProvider
 import vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.datasource.RepositoryDataSource
 import vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.entity.RepositoryData
 

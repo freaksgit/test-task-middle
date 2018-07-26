@@ -7,6 +7,7 @@ import dagger.Module
 import dagger.Provides
 import vasyl.v.stoliarchuk.testtaskmiddle.common.data.prefs.PreferenceDataSource
 import vasyl.v.stoliarchuk.testtaskmiddle.common.data.prefs.PreferenceRepository
+import vasyl.v.stoliarchuk.testtaskmiddle.common.schedulers.SchedulerProvider
 import vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.RepoRepository
 import vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.datasource.RepositoryDataSource
 import vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.datasource.local.LocalRepositoryDataSource

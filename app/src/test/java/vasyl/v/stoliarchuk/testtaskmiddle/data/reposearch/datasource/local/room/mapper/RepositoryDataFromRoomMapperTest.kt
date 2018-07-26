@@ -1,12 +1,12 @@
 package vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.datasource.local.room.mapper
 
+import EntityFactory
+import RoomEntityFactory
 import org.hamcrest.CoreMatchers
 import org.hamcrest.MatcherAssert
 import org.junit.Before
 import org.junit.Test
-import vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.datasource.local.room.entity.RoomOwner
 import vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.datasource.local.room.entity.RoomRepositoryData
-import vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.entity.Owner
 import vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.entity.RepositoryData
 
 open class RepositoryDataFromRoomMapperTest {

@@ -11,10 +11,7 @@ import org.mockito.Mock
 import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnit
 import vasyl.v.stoliarchuk.testtaskmiddle.common.data.prefs.PreferenceDataSource
-import vasyl.v.stoliarchuk.testtaskmiddle.common.data.prefs.PreferenceRepository
 import vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.datasource.RepositoryDataSource
-import vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.datasource.local.LocalRepositoryDataSource
-import vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.datasource.remote.RemoteRepositoryDataSource
 import vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.entity.RepositoryData
 
 

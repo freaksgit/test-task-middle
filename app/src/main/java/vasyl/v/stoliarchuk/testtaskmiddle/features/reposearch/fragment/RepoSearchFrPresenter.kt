@@ -1,12 +1,12 @@
 package vasyl.v.stoliarchuk.testtaskmiddle.features.reposearch.fragment
 
-import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
-import io.reactivex.schedulers.Schedulers
+import vasyl.v.stoliarchuk.testtaskmiddle.common.schedulers.SchedulerProvider
 import vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.datasource.RepositoryDataSource
 
 class RepoSearchFrPresenter(private val mvpView: RepoSearchFrContract.View,
-                            private val repoDataRepository: RepositoryDataSource) : RepoSearchFrContract.Presenter {
+                            private val repoDataRepository: RepositoryDataSource,
+                            private val schedulerProvider: SchedulerProvider) : RepoSearchFrContract.Presenter {
     var querySubscription: Disposable? = null
     var inProgress: Boolean = false
     override fun subscribe() {}
@@ -23,8 +23,8 @@ class RepoSearchFrPresenter(private val mvpView: RepoSearchFrContract.View,
     private fun getRepositoriesByText(queryText: String) {
         inProgress = true
         querySubscription = repoDataRepository.getRepositoriesByText(queryText)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(schedulerProvider.io())
+                .observeOn(schedulerProvider.ui())
                 .subscribe({
                     mvpView.showRepositories(it)
                     mvpView.onComplete()
@@ -44,7 +44,7 @@ class RepoSearchFrPresenter(private val mvpView: RepoSearchFrContract.View,
 
     private fun cancelActiveQuery() {
         disposeQuerySubscriber()
-        mvpView.onSearchCanseled()
+        mvpView.onSearchCanceled()
     }
 
     private fun disposeQuerySubscriber() {

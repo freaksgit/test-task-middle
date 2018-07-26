@@ -9,7 +9,7 @@ interface RepoSearchFrContract {
         fun showRepositories(repositoryDataList: List<RepositoryData>)
         fun onError(t: Throwable)
         fun onComplete()
-        fun onSearchCanseled()
+        fun onSearchCanceled()
 
     }
 

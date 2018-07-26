@@ -3,6 +3,7 @@ package vasyl.v.stoliarchuk.testtaskmiddle.features.reposearch
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
+import vasyl.v.stoliarchuk.testtaskmiddle.common.schedulers.SchedulerProvider
 import vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.datasource.RepositoryDataSource
 import vasyl.v.stoliarchuk.testtaskmiddle.di.ActivityScope
 import vasyl.v.stoliarchuk.testtaskmiddle.di.DiNames
@@ -33,8 +34,9 @@ abstract class RepoSearchModule {
         @Provides
         @ActivityScope
         fun provideRepoSearchFrPresenter(view: RepoSearchFrContract.View,
-                                         @Named(DiNames.REPOSITORY) repDataRepository: RepositoryDataSource): RepoSearchFrContract.Presenter {
-            return RepoSearchFrPresenter(view, repDataRepository)
+                                         @Named(DiNames.REPOSITORY) repDataRepository: RepositoryDataSource,
+                                         @Named(DiNames.PROVIDER_RX) schedulerProvider: SchedulerProvider): RepoSearchFrContract.Presenter {
+            return RepoSearchFrPresenter(view, repDataRepository, schedulerProvider)
         }
     }
 }

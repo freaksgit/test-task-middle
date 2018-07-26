@@ -15,7 +15,8 @@ import vasyl.v.stoliarchuk.testtaskmiddle.di.module.*
     AppModule::class,
     DataMappingModule::class,
     DataModule::class,
-    NetworkModule::class
+    NetworkModule::class,
+    Schedulers::class
 ])
 interface AppComponent : AndroidInjector<App> {
 
