@@ -1,15 +1,23 @@
 package vasyl.v.stoliarchuk.testtaskmiddle.di.module
 
 import android.app.Application
+import android.content.Context
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
+import vasyl.v.stoliarchuk.testtaskmiddle.App
 import vasyl.v.stoliarchuk.testtaskmiddle.di.AppScope
+import vasyl.v.stoliarchuk.testtaskmiddle.di.DiNames
+import javax.inject.Named
 
 @Module
-class AppModule {
+abstract class AppModule {
 
-    @Provides
+    @Binds
     @AppScope
-    fun provideApplication(app: Application): Application = app
+    @Named(DiNames.APP_CONTEXT)
+    abstract fun provideApplicationContext(app: App): Context
+
+
 
 }

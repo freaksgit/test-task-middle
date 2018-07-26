@@ -5,15 +5,18 @@ import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 import vasyl.v.stoliarchuk.testtaskmiddle.App
-import vasyl.v.stoliarchuk.testtaskmiddle.di.module.AndroidModule
-import vasyl.v.stoliarchuk.testtaskmiddle.di.module.AppModule
+import vasyl.v.stoliarchuk.testtaskmiddle.di.AppScope
+import vasyl.v.stoliarchuk.testtaskmiddle.di.module.*
 import javax.inject.Singleton
 
-@Singleton
+@AppScope
 @Component(modules = [
     AndroidSupportInjectionModule::class,
+    AndroidModule::class,
     AppModule::class,
-    AndroidModule::class
+    DataMappingModule::class,
+    DataModule::class,
+    NetworkModule::class
 ])
 interface AppComponent : AndroidInjector<App> {
 

@@ -11,7 +11,7 @@ class OwnerToRoomMapper : Function<Owner, RoomOwner>{
             owner.nodeId,
             owner.avatarUrl,
             owner.gravatarId,
-            owner.avatarUrl,
+            owner.url,
             owner.htmlUrl,
             owner.followersUrl,
             owner.followingUrl,

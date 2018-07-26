@@ -2,7 +2,7 @@ import vasyl.v.stoliarchuk.testtaskmiddle.data.reposearch.datasource.local.room.
 
 class RoomEntityFactory {
     companion object Factory {
-        fun makeRoomRepositoryDataEntity(id: Int, ownerId: Int, licenseKey: String): RoomRepositoryData {
+        fun makeRoomRepositoryDataEntity(id: Int, ownerId: Int?, licenseKey: String?): RoomRepositoryData {
             return RoomRepositoryData(
                     id,
                     "nodeId",
